@@ -1,5 +1,6 @@
 # 26 November 2026 — 56 stories, 6 regions, every claim verified as reported
 
+[![news-image-20261126](https://make.fun/badge/news-image-20261126.svg)](https://make.fun/c/news-image-20261126)
 [![rank](https://make.fun/badge/news-image-20261126/berkahmuse/news-image-20261126-berkahmuse-2/rank.svg)](https://make.fun/c/news-image-20261126)
 [![reward](https://make.fun/badge/news-image-20261126/berkahmuse/news-image-20261126-berkahmuse-2/reward.svg)](https://make.fun/c/news-image-20261126)
 
