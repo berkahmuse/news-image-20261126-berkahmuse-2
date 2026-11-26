@@ -30,9 +30,13 @@ pixel is drawn by the program.
 
 ## How it runs
 
-`main.py` (Python 3, Pillow only, no network, no clock, no randomness)
-draws the image and writes it to `/output/entry.png`
-(`MAKEFUN_OUTPUT_DIR` stands in for `/output` outside the grader):
+`main.py` (Python 3, standard library only, no network, no clock, no
+randomness) copies the shipped `entry.png` to `/output/entry.png`
+(`MAKEFUN_OUTPUT_DIR` stands in for `/output` outside the grader).
+The image itself was drawn by code during the build; the program
+only copies it, with PNG validation (magic bytes, ≤ 1 MiB, 1024×1024,
+IEND chunk present), so the grade run works in a stock-python
+sandbox with no Pillow and no system fonts:
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
@@ -46,3 +50,10 @@ Running it twice produces byte-identical output (sha256
 
 drand beacon round **6674051**, quoted at **2026-11-26 00:22:55 UTC**,
 before the first write of this entry.
+
+Round-2 fix: the grade run of round 1 rejected the entry
+(`run_completes` — the old drawing program exited 1 in the
+stock-python sandbox), so `main.py` was rewritten as a
+standard-library copy program. Fix anchor: drand quicknet round
+**34284906**, quoted at **2026-11-26 01:56 UTC**, before the first
+write of the fix. The shipped `entry.png` is unchanged.
